@@ -65,5 +65,9 @@ namespace BombastLauncher
             }
         }
 
+        private void closeWindowBtn_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Close();
+        }
     }
 }

@@ -1,9 +1,10 @@
-﻿<Window x:Class="BombastLauncher.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BombastLauncher"
+        xmlns:Components="clr-namespace:BombastLauncher.Components" x:Class="BombastLauncher.MainWindow"
         mc:Ignorable="d"
         Title="Bombast Launcher" 
         Width="1080" Height="700" MinWidth="1080" MinHeight="700" MaxWidth="1920"
@@ -11,7 +12,9 @@
     <Border BorderBrush="#FF1E2122" BorderThickness="1">
         <Grid>
             <DockPanel LastChildFill="True">
-                <Border x:Name="titleBar" BorderBrush="#FF1E2122" BorderThickness="0,0,0,1" Height="35" VerticalAlignment="Top" Background="#FF141718" DockPanel.Dock="Top" MouseLeftButtonDown="titleBar_MouseLeftButtonDown" MouseMove="titleBar_MouseMove" MouseLeftButtonUp="titleBar_MouseLeftButtonUp"/>
+                <Border x:Name="titleBar" BorderBrush="#FF1E2122" BorderThickness="0,0,0,1" Height="35" VerticalAlignment="Top" Background="#FF141718" DockPanel.Dock="Top" MouseLeftButtonDown="titleBar_MouseLeftButtonDown" MouseMove="titleBar_MouseMove" MouseLeftButtonUp="titleBar_MouseLeftButtonUp">
+                    <Components:ImageButton x:Name="closeWindowBtn" HorizontalAlignment="right" Height="10" Margin="0,12,10,0" VerticalAlignment="Top" Width="10" Style="{DynamicResource ImageButtonStyle}" RenderTransformOrigin="-0.225,0.5" DownSource="Resources/Images/CloseWindowIcon_hover.png" FocusSource="Resources/Images/CloseWindowIcon_hover.png" UpSource="Resources/Images/CloseWindowIcon_up.png" MouseLeftButtonDown="closeWindowBtn_MouseLeftButtonDown"/>
+                </Border>
                 <Border BorderBrush="#FF1E2122" BorderThickness="0,0,0,1" Height="50" VerticalAlignment="Top" Background="#FF141718" DockPanel.Dock="Top"/>
                 <Border BorderBrush="#FF2A2D2E" BorderThickness="0,0,1,0" Width="312" HorizontalAlignment="Left" Background="#FF141718" DockPanel.Dock="Left" />
                 <Border BorderThickness="0" Background="#FF161B1D"/>
