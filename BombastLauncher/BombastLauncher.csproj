@@ -38,6 +38,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -57,6 +59,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ApplicationViewModel.cs" />
+    <Compile Include="Components\FancyTextbox.xaml.cs">
+      <DependentUpon>FancyTextbox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="IPageViewModel.cs" />
     <Compile Include="Views\BaseLauncherView.xaml.cs">
       <DependentUpon>BaseLauncherView.xaml</DependentUpon>
@@ -66,6 +71,10 @@
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LoginViewModel.cs" />
+    <Page Include="Components\FancyTextbox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Components\ImageButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

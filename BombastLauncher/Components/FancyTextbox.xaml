@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="BombastLauncher.Components.FancyTextbox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BombastLauncher.Components"
+             mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="300">
+    <Border CornerRadius="8">
+        <DockPanel Background="#FF27222A">
+            <TextBox Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Foreground="#FFECECEC" />
+        </DockPanel>
+    </Border>
+
+    <UserControl.Resources>
+        <Style TargetType="local:FancyTextbox">
+            <Style.Triggers>
+                <Trigger Property="IsFocused" Value="True">
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+</UserControl>
