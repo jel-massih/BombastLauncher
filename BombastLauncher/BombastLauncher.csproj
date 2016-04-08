@@ -56,11 +56,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ApplicationViewModel.cs" />
+    <Compile Include="IPageViewModel.cs" />
+    <Compile Include="Views\BaseLauncherView.xaml.cs">
+      <DependentUpon>BaseLauncherView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BaseLauncherViewModel.cs" />
+    <Compile Include="Views\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginViewModel.cs" />
     <Page Include="Components\ImageButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="ApplicationView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -71,10 +81,18 @@
     <Compile Include="Components\ImageButton.xaml.cs">
       <DependentUpon>ImageButton.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="ApplicationView.xaml.cs">
+      <DependentUpon>ApplicationView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\BaseLauncherView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -121,6 +139,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\NetworkStatusBadge_Online.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Helpers\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

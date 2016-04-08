@@ -4,14 +4,16 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BombastLauncher"
-        xmlns:Components="clr-namespace:BombastLauncher.Components" x:Class="BombastLauncher.MainWindow"
+        xmlns:Components="clr-namespace:BombastLauncher.Components" 
+        xmlns:Views="clr-namespace:BombastLauncher.Views"
+        x:Class="BombastLauncher.ApplicationView"
         mc:Ignorable="d"
         Title="Bombast Launcher" 
         Width="1080" Height="700" MinWidth="1080" MinHeight="700" MaxWidth="1920"
         WindowStyle="None" AllowsTransparency="True" Background="Transparent" ResizeMode="CanResizeWithGrip">
     <Border BorderBrush="#FF1E2122" BorderThickness="1">
         <Grid>
-            <DockPanel LastChildFill="True">
+            <DockPanel LastChildFill="True" Background="DarkGray">
                 <Border x:Name="titleBar" BorderBrush="#FF1E2122" BorderThickness="0,0,0,1" Height="35" VerticalAlignment="Top" Background="#FF141718" DockPanel.Dock="Top" MouseLeftButtonDown="titleBar_MouseLeftButtonDown" MouseMove="titleBar_MouseMove" MouseLeftButtonUp="titleBar_MouseLeftButtonUp">
                     <DockPanel LastChildFill="True">
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
@@ -24,10 +26,17 @@
                         </StackPanel>
                     </DockPanel>
                 </Border>
-                <Border BorderBrush="#FF1E2122" BorderThickness="0,0,0,1" Height="50" VerticalAlignment="Top" Background="#FF141718" DockPanel.Dock="Top"/>
-                <Border BorderBrush="#FF2A2D2E" BorderThickness="0,0,1,0" Width="312" HorizontalAlignment="Left" Background="#FF141718" DockPanel.Dock="Left" />
-                <Border BorderThickness="0" Background="#FF161B1D"/>
+                <ContentControl x:Name="mainContentArea" Content="{Binding CurrentPageViewModel}" />
             </DockPanel>
         </Grid>
     </Border>
+
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type Views:LoginViewModel}">
+            <Views:LoginView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type Views:BaseLauncherViewModel}">
+            <Views:BaseLauncherView />
+        </DataTemplate>
+    </Window.Resources>
 </Window>

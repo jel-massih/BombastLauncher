@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 
 namespace BombastLauncher
 {
-    public partial class MainWindow : Window
+    public partial class ApplicationView : Window
     {
         private bool _restoreForDragMove;
 
-        public MainWindow()
+        public ApplicationView()
         {
             InitializeComponent();
         }

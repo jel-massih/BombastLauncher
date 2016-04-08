@@ -13,5 +13,12 @@ namespace BombastLauncher
     /// </summary>
     public partial class App : Application
     {
+        private void OnStartup(object sender, StartupEventArgs e)
+        {
+            ApplicationView app = new ApplicationView();
+            ApplicationViewModel context = new ApplicationViewModel();
+            app.DataContext = context;
+            app.Show();
+        }
     }
 }
