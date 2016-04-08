@@ -13,7 +13,10 @@
         <Grid>
             <DockPanel LastChildFill="True">
                 <Border x:Name="titleBar" BorderBrush="#FF1E2122" BorderThickness="0,0,0,1" Height="35" VerticalAlignment="Top" Background="#FF141718" DockPanel.Dock="Top" MouseLeftButtonDown="titleBar_MouseLeftButtonDown" MouseMove="titleBar_MouseMove" MouseLeftButtonUp="titleBar_MouseLeftButtonUp">
-                    <Components:ImageButton x:Name="closeWindowBtn" HorizontalAlignment="right" Height="10" Margin="0,12,10,0" VerticalAlignment="Top" Width="10" Style="{DynamicResource ImageButtonStyle}" RenderTransformOrigin="-0.225,0.5" DownSource="Resources/Images/CloseWindowIcon_hover.png" FocusSource="Resources/Images/CloseWindowIcon_hover.png" UpSource="Resources/Images/CloseWindowIcon_up.png" MouseLeftButtonDown="closeWindowBtn_MouseLeftButtonDown"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Components:ImageButton x:Name="minimizeWindowBtn" HorizontalAlignment="right" Height="12" Margin="0,11,12,0" VerticalAlignment="Top" Width="12" Style="{DynamicResource ImageButtonStyle}" RenderTransformOrigin="-0.225,0.5" DownSource="Resources/Images/MinimizeWindowIcon_focus.png" FocusSource="Resources/Images/MinimizeWindowIcon_focus.png" UpSource="Resources/Images/MinimizeWindowIcon_up.png" MouseLeftButtonUp="minimizeWindowBtn_MouseLeftButtonUp"/>
+                        <Components:ImageButton x:Name="closeWindowBtn" HorizontalAlignment="right" Height="12" Margin="0,11,12,0" VerticalAlignment="Top" Width="12" Style="{DynamicResource ImageButtonStyle}" RenderTransformOrigin="-0.225,0.5" DownSource="Resources/Images/CloseWindowIcon_hover.png" FocusSource="Resources/Images/CloseWindowIcon_hover.png" UpSource="Resources/Images/CloseWindowIcon_up.png" MouseLeftButtonUp="closeWindowBtn_MouseLeftButtonUp"/>
+                    </StackPanel>
                 </Border>
                 <Border BorderBrush="#FF1E2122" BorderThickness="0,0,0,1" Height="50" VerticalAlignment="Top" Background="#FF141718" DockPanel.Dock="Top"/>
                 <Border BorderBrush="#FF2A2D2E" BorderThickness="0,0,1,0" Width="312" HorizontalAlignment="Left" Background="#FF141718" DockPanel.Dock="Left" />

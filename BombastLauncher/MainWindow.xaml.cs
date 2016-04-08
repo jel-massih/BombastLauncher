@@ -65,9 +65,14 @@ namespace BombastLauncher
             }
         }
 
-        private void closeWindowBtn_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void closeWindowBtn_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             Close();
+        }
+
+        private void minimizeWindowBtn_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
         }
     }
 }
