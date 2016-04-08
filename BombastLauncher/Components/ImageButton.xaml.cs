@@ -47,22 +47,22 @@ namespace BombastLauncher.Components
             InitializeComponent();
         }
 
-        private void Grid_MouseEnter(object sender, MouseEventArgs e)
+        private void Button_MouseEnter(object sender, MouseEventArgs e)
         {
             image.Source = FocusSource;
         }
 
-        private void Grid_MouseLeave(object sender, MouseEventArgs e)
+        private void Button_MouseLeave(object sender, MouseEventArgs e)
         {
             image.Source = UpSource;
         }
 
-        private void Grid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void Button_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             image.Source = DownSource;
         }
 
-        private void Grid_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        private void Button_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             if(IsMouseOver)
             {
