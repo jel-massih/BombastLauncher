@@ -17,7 +17,7 @@ namespace BombastLauncher
 {
     public partial class MainWindow : Window
     {
-        private bool m_restoreForDragMove;
+        private bool _restoreForDragMove;
 
         public MainWindow()
         {
@@ -39,29 +39,33 @@ namespace BombastLauncher
             }
             else
             {
-                m_restoreForDragMove = WindowState == WindowState.Maximized;
-                DragMove();
+                _restoreForDragMove = WindowState == WindowState.Maximized;
             }
         }
 
         private void titleBar_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            m_restoreForDragMove = false;
+            _restoreForDragMove = false;
         }
 
         private void titleBar_MouseMove(object sender, MouseEventArgs e)
         {
-            if(m_restoreForDragMove)
+            if(_restoreForDragMove)
             {
-                m_restoreForDragMove = false;
+                _restoreForDragMove = false;
 
                 var point = PointToScreen(e.MouseDevice.GetPosition(this));
 
                 Left = point.X - (RestoreBounds.Width * 0.5);
-                Top = point.Y;
+                Top = point.Y - 15;
 
                 WindowState = WindowState.Normal;
+            }
+
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
                 DragMove();
+                _restoreForDragMove = false;
             }
         }
 
