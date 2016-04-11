@@ -10,8 +10,6 @@ namespace BombastLauncher
     class ApplicationViewModel
     {
 
-        private ICommand _changePageCommand;
-
         private IPageViewModel _currentPageViewModel;
         private List<IPageViewModel> _pageViewModels;
 
