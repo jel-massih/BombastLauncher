@@ -38,5 +38,24 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <Style x:Key="BombastButton" TargetType="Button">
+            <Setter Property="Background" Value="#FF8122A4" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="18,9,18,13" CornerRadius="3">
+                            <TextBlock Text="Login" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#6b1c88"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Application.Resources>
 </Application>
