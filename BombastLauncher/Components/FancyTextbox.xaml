@@ -9,8 +9,8 @@
     <Border BorderThickness="1" CornerRadius="2" Background="#FF27222A" BorderBrush="#FF19171B">
         <DockPanel Background="{x:Null}">
             <Grid>
-                <TextBlock Name="placeholder_txtBlock" Foreground="{Binding ElementName=FancyTextboxControl, Path=PlaceholderTextForegroundBrush }" Text="Username" VerticalAlignment="Center" Margin="14,-2,14,0" />
-                <TextBox Name="textbox" Background="{x:Null}" OverridesDefaultStyle="True" SelectionBrush="{x:Null}" Foreground="{Binding ElementName=FancyTextboxControl, Path=TextForegroundBrush }" BorderBrush="{x:Null}" Template="{DynamicResource FancyTextBoxStyle}" VerticalAlignment="Center" Margin="14,-2,14,0" TextChanged="textbox_TextChanged" />
+                <TextBlock Name="placeholder_txtBlock" Foreground="{Binding ElementName=FancyTextboxControl, Path=PlaceholderTextForegroundBrush }" Text="{Binding ElementName=FancyTextboxControl, Path=PlaceholderText }" VerticalAlignment="Center" Margin="14,-2,14,0" />
+                <TextBox Name="textbox" Background="{x:Null}" OverridesDefaultStyle="True" SelectionBrush="{x:Null}" Foreground="{Binding ElementName=FancyTextboxControl, Path=TextForegroundBrush }" CaretBrush="{Binding ElementName=FancyTextboxControl, Path=TextForegroundBrush }" BorderBrush="{x:Null}" Template="{DynamicResource FancyTextBoxStyle}" VerticalAlignment="Center" Margin="14,-2,14,0" TextChanged="textbox_TextChanged" />
             </Grid>
         </DockPanel>
     </Border>
