@@ -5,19 +5,32 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:BombastLauncher.Components"
              mc:Ignorable="d" 
-             d:DesignHeight="30" d:DesignWidth="300">
-    <Border CornerRadius="8">
-        <DockPanel Background="#FF27222A">
-            <TextBox Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Foreground="#FFECECEC" />
+             d:DesignHeight="30" d:DesignWidth="300" x:Name="FancyTextboxControl">
+    <Border BorderThickness="1" CornerRadius="2" Background="#FF27222A" BorderBrush="#FF19171B">
+        <DockPanel Background="{x:Null}">
+            <Grid>
+                <TextBlock Name="placeholder_txtBlock" Foreground="{Binding ElementName=FancyTextboxControl, Path=PlaceholderTextForegroundBrush }" Text="Username" VerticalAlignment="Center" Margin="14,-2,14,0" />
+                <TextBox Name="textbox" Background="{x:Null}" OverridesDefaultStyle="True" SelectionBrush="{x:Null}" Foreground="{Binding ElementName=FancyTextboxControl, Path=TextForegroundBrush }" BorderBrush="{x:Null}" Template="{DynamicResource FancyTextBoxStyle}" VerticalAlignment="Center" Margin="14,-2,14,0" TextChanged="textbox_TextChanged" />
+            </Grid>
         </DockPanel>
     </Border>
 
     <UserControl.Resources>
-        <Style TargetType="local:FancyTextbox">
-            <Style.Triggers>
-                <Trigger Property="IsFocused" Value="True">
+        <ControlTemplate x:Key="FancyTextBoxStyle" TargetType="{x:Type TextBoxBase}">
+            <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                <ScrollViewer x:Name="PART_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Opacity" TargetName="border" Value="0.56"/>
                 </Trigger>
-            </Style.Triggers>
-        </Style>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="BorderBrush" TargetName="border" Value="#FF7EB4EA"/>
+                </Trigger>
+                <Trigger Property="IsKeyboardFocused" Value="True">
+                    <Setter Property="BorderBrush" TargetName="border" Value="#FF569DE5"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
     </UserControl.Resources>
 </UserControl>
