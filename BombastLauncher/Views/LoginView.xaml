@@ -22,19 +22,24 @@
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
         <Image Source="/BombastLauncher;component/Resources/Images/BombastLogo.png" MaxHeight="250" MaxWidth="250" Margin="-5,0,5,0"/>
-        <Border Grid.Column="1" Height="400" Background="#7F000000" Margin="20,0,90,0" CornerRadius="4">
-            <StackPanel Margin="40,10,40,10">
-                <Label Margin="0,25,0,0" Foreground="White" FontSize="36">Login</Label>
-                <Components:FancyTextbox Margin="0,20,0,0" Height="46" FontSize="18.667" PlaceholderText="Username" />
-                <Components:FancyTextbox Margin="0,20,0,0" Height="46" FontSize="18.667" PlaceholderText="Password" />
-                <DockPanel Margin="0,20,0,0">
-                    <CheckBox HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,1,0,0" />
-                    <TextBlock Margin="5,0,0,0" Foreground="#FF999999" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center">Remember Me</TextBlock>
-                    <Button Style="{StaticResource Link}" DockPanel.Dock="Right" Margin="0" HorizontalAlignment="Right" FontSize="14">Forgot Password?</Button>
-                </DockPanel>
-                <Button Margin="0,20,0,0" Style="{StaticResource BombastButton}" HorizontalAlignment="Left" FontSize="14">Login</Button>
-                
+        <StackPanel Margin="20,0,90,0" Grid.Column="1" VerticalAlignment="Center" >
+            <Border Margin="0,25,0,0" Height="400" Background="#7F000000" CornerRadius="4">
+                <StackPanel Margin="40,10,40,10">
+                    <Label Margin="0,25,0,0" Foreground="White" FontSize="36">Login</Label>
+                    <Components:FancyTextbox Margin="0,20,0,0" Height="46" FontSize="18.667" PlaceholderText="Username" />
+                    <Components:FancyTextbox Margin="0,20,0,0" Height="46" FontSize="18.667" PlaceholderText="Password" />
+                    <DockPanel Margin="0,20,0,0">
+                        <CheckBox HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,1,0,0" />
+                        <TextBlock Margin="5,0,0,0" Foreground="#FF999999" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center">Remember Me</TextBlock>
+                        <Button Style="{StaticResource Link}" DockPanel.Dock="Right" Margin="0" HorizontalAlignment="Right" FontSize="14">Forgot Password?</Button>
+                    </DockPanel>
+                    <Button Margin="0,20,0,0" Style="{StaticResource BombastButton}" HorizontalAlignment="Left" FontSize="14">Login</Button>
+                </StackPanel>
+            </Border>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,25,0,0">
+                <TextBlock Foreground="White" FontSize="16">Don't have an account?</TextBlock>
+                <Button Style="{StaticResource HoverLink}" Margin="5,0,0,0" FontSize="16" FontFamily="Segoe UI Semibold">Create one now</Button>
             </StackPanel>
-        </Border>
+        </StackPanel>
     </Grid>
 </UserControl>
