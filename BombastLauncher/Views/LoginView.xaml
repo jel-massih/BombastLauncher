@@ -31,14 +31,14 @@
                     <DockPanel Margin="0,20,0,0">
                         <CheckBox HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,1,0,0" />
                         <TextBlock Margin="5,0,0,0" Foreground="#FF999999" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center">Remember Me</TextBlock>
-                        <Button Style="{StaticResource Link}" DockPanel.Dock="Right" Margin="0" HorizontalAlignment="Right" FontSize="14">Forgot Password?</Button>
+                        <Button x:Name="forgotPasswordBtn" Style="{StaticResource Link}" DockPanel.Dock="Right" Margin="0" HorizontalAlignment="Right" FontSize="14" Click="forgotPasswordBtn_Click">Forgot Password?</Button>
                     </DockPanel>
                     <Button Margin="0,20,0,0" Style="{StaticResource BombastButton}" HorizontalAlignment="Left" FontSize="14">Login</Button>
                 </StackPanel>
             </Border>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,25,0,0">
                 <TextBlock Foreground="White" FontSize="16">Don't have an account?</TextBlock>
-                <Button Style="{StaticResource HoverLink}" Margin="5,0,0,0" FontSize="16" FontFamily="Segoe UI Semibold">Create one now</Button>
+                <Button x:Name="createAccountLinkBtn" Style="{StaticResource HoverLink}" Margin="5,0,0,0" FontSize="16" FontFamily="Segoe UI Semibold" Click="createAccountLinkBtn_Click">Create one now</Button>
             </StackPanel>
         </StackPanel>
     </Grid>

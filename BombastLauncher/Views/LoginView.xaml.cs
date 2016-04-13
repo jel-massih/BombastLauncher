@@ -23,5 +23,15 @@ namespace BombastLauncher.Views
         {
             InitializeComponent();
         }
+
+        private void createAccountLinkBtn_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://jel-massih.com/Bombast/get-bombastengine");
+        }
+
+        private void forgotPasswordBtn_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://jel-massih.com/Bombast/forgot-password");
+        }
     }
 }
