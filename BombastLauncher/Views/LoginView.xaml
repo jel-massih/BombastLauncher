@@ -21,7 +21,7 @@
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
-        <Image Source="/BombastLauncher;component/Resources/Images/BombastLogo.png" MaxHeight="250" MaxWidth="250" Margin="-5,0,5,0"/>
+        <Image Source="/BombastLauncher;component/Resources/Images/BombastLogo.png" MaxHeight="250" MaxWidth="250" Margin="0"/>
         <StackPanel Margin="20,0,90,0" Grid.Column="1" VerticalAlignment="Center" >
             <Border Margin="0,25,0,0" Height="400" Background="#7F000000" CornerRadius="4">
                 <StackPanel Margin="40,10,40,10">
