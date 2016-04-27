@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BombastLauncher.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,19 +20,28 @@ namespace BombastLauncher.Views
     /// </summary>
     public partial class LoginView : UserControl
     {
+        AuthService AuthService;
+
         public LoginView()
         {
+            AuthService = new AuthService();
+
             InitializeComponent();
         }
 
         private void createAccountLinkBtn_Click(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process.Start("http://jel-massih.com/Bombast/get-bombastengine");
+            System.Diagnostics.Process.Start("http://127.0.0.1/register");
         }
 
         private void forgotPasswordBtn_Click(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process.Start("http://jel-massih.com/Bombast/forgot-password");
+            System.Diagnostics.Process.Start("http://127.0.0.1/reset-password");
+        }
+
+        private void loginBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var loginStatus = AuthService.TryLogin(emailTxt.Text, passwordTxt.Password);
         }
     }
 }

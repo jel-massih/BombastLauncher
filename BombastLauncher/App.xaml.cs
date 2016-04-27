@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BombastLauncher.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -15,6 +16,10 @@ namespace BombastLauncher
     {
         private void OnStartup(object sender, StartupEventArgs e)
         {
+            BombastSettings.BaseApiUrl = System.Configuration.ConfigurationManager.AppSettings["ApiUrl"];
+            BombastSettings.ApiVersion = System.Configuration.ConfigurationManager.AppSettings["ApiVersion"];
+            BombastSettings.ApiUrl = BombastSettings.BaseApiUrl + BombastSettings.ApiVersion + "/";
+
             ApplicationView app = new ApplicationView();
             ApplicationViewModel context = new ApplicationViewModel();
             app.DataContext = context;

@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:BombastLauncher"
         xmlns:Components="clr-namespace:BombastLauncher.Components" 
         xmlns:Views="clr-namespace:BombastLauncher.Views"
+        xmlns:Models="clr-namespace:BombastLauncher.Models"
         x:Class="BombastLauncher.ApplicationView"
         mc:Ignorable="d"
         Title="Bombast Launcher" 
@@ -32,10 +33,10 @@
     </Border>
 
     <Window.Resources>
-        <DataTemplate DataType="{x:Type Views:LoginViewModel}">
+        <DataTemplate DataType="{x:Type Models:LoginViewModel}">
             <Views:LoginView />
         </DataTemplate>
-        <DataTemplate DataType="{x:Type Views:BaseLauncherViewModel}">
+        <DataTemplate DataType="{x:Type Models:BaseLauncherViewModel}">
             <Views:BaseLauncherView />
         </DataTemplate>
     </Window.Resources>

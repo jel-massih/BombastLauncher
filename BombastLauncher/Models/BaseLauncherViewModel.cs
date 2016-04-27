@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BombastLauncher.Views
+namespace BombastLauncher.Models
 {
-    class LoginViewModel : IPageViewModel
+    class BaseLauncherViewModel : IPageViewModel
     {
         public string Name
         {
             get
             {
-                return "Login";
+                return "Base Launcher";
             }
         }
     }

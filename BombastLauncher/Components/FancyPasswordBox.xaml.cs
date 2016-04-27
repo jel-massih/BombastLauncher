@@ -15,12 +15,12 @@ using System.Windows.Shapes;
 
 namespace BombastLauncher.Components
 {
-    public partial class FancyTextbox : UserControl
+    public partial class FancyPasswordBox : UserControl
     {
-        public static readonly DependencyProperty PlaceholderTextForegroundBrushProperty = DependencyProperty.RegisterAttached("PlaceholderTextForegroundBrush", typeof(Brush), typeof(FancyTextbox), new PropertyMetadata((SolidColorBrush)(new BrushConverter().ConvertFrom("#6f6f6f"))));
-        public static readonly DependencyProperty TextForegroundBrushProperty = DependencyProperty.RegisterAttached("TextForegroundBrush", typeof(Brush), typeof(FancyTextbox), new PropertyMetadata((SolidColorBrush)(new BrushConverter().ConvertFrom("#cccccc"))));
+        public static readonly DependencyProperty PlaceholderTextForegroundBrushProperty = DependencyProperty.RegisterAttached("PlaceholderTextForegroundBrush", typeof(Brush), typeof(FancyPasswordBox), new PropertyMetadata((SolidColorBrush)(new BrushConverter().ConvertFrom("#6f6f6f"))));
+        public static readonly DependencyProperty TextForegroundBrushProperty = DependencyProperty.RegisterAttached("TextForegroundBrush", typeof(Brush), typeof(FancyPasswordBox), new PropertyMetadata((SolidColorBrush)(new BrushConverter().ConvertFrom("#cccccc"))));
 
-        public static readonly DependencyProperty PlaceholderTextProperty = DependencyProperty.RegisterAttached("PlaceholderText", typeof(string), typeof(FancyTextbox));
+        public static readonly DependencyProperty PlaceholderTextProperty = DependencyProperty.RegisterAttached("PlaceholderText", typeof(string), typeof(FancyPasswordBox));
 
         [Description("The foreground brush to be used within the textbox."), Category("Brush")]
         public Brush TextForegroundBrush
@@ -43,19 +43,19 @@ namespace BombastLauncher.Components
             set { base.SetValue(PlaceholderTextForegroundBrushProperty, value); }
         }
 
-        public string Text
+        public string Password
         {
-            get { return textbox.Text; }
+            get { return textbox.Password; }
         }
 
-        public FancyTextbox()
+        public FancyPasswordBox()
         {
             InitializeComponent();
         }
 
-        private void textbox_TextChanged(object sender, TextChangedEventArgs e)
+        private void textbox_PasswordChanged(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(textbox.Text))
+            if (!string.IsNullOrEmpty(textbox.Password))
             {
                 placeholder_txtBlock.Visibility = Visibility.Hidden;
             }

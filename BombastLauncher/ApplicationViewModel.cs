@@ -1,4 +1,5 @@
-﻿using BombastLauncher.Views;
+﻿using BombastLauncher.Models;
+using BombastLauncher.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -26,14 +26,14 @@
             <Border Margin="0,25,0,0" Height="400" Background="#7F000000" CornerRadius="4">
                 <StackPanel Margin="40,10,40,10">
                     <Label Margin="0,25,0,0" Foreground="White" FontSize="36">Login</Label>
-                    <Components:FancyTextbox Margin="0,20,0,0" Height="46" FontSize="18.667" PlaceholderText="Username" />
-                    <Components:FancyTextbox Margin="0,20,0,0" Height="46" FontSize="18.667" PlaceholderText="Password" />
+                    <Components:FancyTextbox x:Name="emailTxt" Margin="0,20,0,0" Height="46" FontSize="18.667" PlaceholderText="Email" />
+                    <Components:FancyPasswordBox x:Name="passwordTxt" Margin="0,20,0,0" Height="46" FontSize="18.667" PlaceholderText="Password" />
                     <DockPanel Margin="0,20,0,0">
                         <CheckBox HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,1,0,0" />
                         <TextBlock Margin="5,0,0,0" Foreground="#FF999999" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center">Remember Me</TextBlock>
                         <Button x:Name="forgotPasswordBtn" Style="{StaticResource Link}" DockPanel.Dock="Right" Margin="0" HorizontalAlignment="Right" FontSize="14" Click="forgotPasswordBtn_Click">Forgot Password?</Button>
                     </DockPanel>
-                    <Button Margin="0,20,0,0" Style="{StaticResource BombastButton}" HorizontalAlignment="Left" FontSize="14">Login</Button>
+                    <Button x:Name="loginBtn" Margin="0,20,0,0" Style="{StaticResource BombastButton}" HorizontalAlignment="Left" FontSize="14" Click="loginBtn_Click">Login</Button>
                 </StackPanel>
             </Border>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,25,0,0">

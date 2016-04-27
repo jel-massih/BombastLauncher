@@ -36,7 +36,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
@@ -58,18 +63,29 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ApplicationViewModel.cs" />
+    <Compile Include="Components\FancyPasswordBox.xaml.cs">
+      <DependentUpon>FancyPasswordBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Components\FancyTextbox.xaml.cs">
       <DependentUpon>FancyTextbox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\ApiRequestHelper.cs" />
+    <Compile Include="Helpers\AuthService.cs" />
+    <Compile Include="Helpers\BombastSettings.cs" />
     <Compile Include="IPageViewModel.cs" />
+    <Compile Include="Models\LoginResponse.cs" />
     <Compile Include="Views\BaseLauncherView.xaml.cs">
       <DependentUpon>BaseLauncherView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\BaseLauncherViewModel.cs" />
+    <Compile Include="Models\BaseLauncherViewModel.cs" />
     <Compile Include="Views\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\LoginViewModel.cs" />
+    <Compile Include="Models\LoginViewModel.cs" />
+    <Page Include="Components\FancyPasswordBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Components\FancyTextbox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -120,6 +136,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -148,9 +165,7 @@
   <ItemGroup>
     <Resource Include="Resources\Images\NetworkStatusBadge_Online.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Helpers\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Resources\Images\BombastLogo.png" />
   </ItemGroup>
